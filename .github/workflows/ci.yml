@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    # Test against multiple Python versions in parallel
+    strategy:
+      matrix:
+        python-version: [ "3.9", "3.10", "3.11" ]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Cache the Pipenv virtual environment for speedier installs
+      - name: Cache Pipenv environment
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('Pipfile.lock') }}
+          # If you prefer to cache Pipenv’s .venv in the project directory:
+          # path: .venv
+          # key: ${{ runner.os }}-pipenv-${{ hashFiles('Pipfile.lock') }}
+
+      - name: Install dependencies
+        run: |
+          # Upgrade pip
+          pip install --upgrade pip
+          # Install pipenv
+          pip install pipenv
+          # Install dev packages (including pytest)
+          pipenv install --dev
+
+      - name: Run tests
+        run: |
+          # Execute tests via Pipenv
+          pipenv run pytest
