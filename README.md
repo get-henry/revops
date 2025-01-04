@@ -5,8 +5,6 @@ Collection of Revenue Operations Stuff
 
 ## Table of Contents
 
-- [Background](#background)
-- [Features](#features)
 - [Folder Structure](#folder-structure)
 - [Installation](#installation)
 - [salesforceimportappend.py](#salesforceimportappend.py)
@@ -117,7 +115,6 @@ A Python script to automate the reporting of Salesforce lead, contact, and accou
 
 ##### Tabular Report:
 Total_Leads | Converted | Total_Accounts | Accounts_Converted | Converted Rate (%) | Account Converted Rate (%)
-
 100.0       | 32.0      | 58.0           | 26.0               | 32.0               | 44.83
 100.0       | 20.0      | 63.0           | 19.0               | 20.0               | 30.0
 200.0       | 52.0      | 121.0          | 45.0               | 26.0               | 37.19
