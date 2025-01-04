@@ -3,16 +3,62 @@ Collection of Revenue Operations Stuff
 
 ---
 
-## Project Structure
+## Table of Contents
+
+- [Background](#background)
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [salesforceimportappend.py](#salesforceimportappend.py)
+- [02 salesforcejoin.py](#02-salesforcejoin.py)
+- [03 salesforceconversionrate.py](#03-salesforceconversionrate.py)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+---
+
+## Folder Structure
+```plaintext
 .
 ├── data/                     # Folder for input CSV files (lead, contact, and account reports)
-├── scripts/                  # Python scripts for data processing and analysis
-│   ├── data_processing.py    # Script for data integration and cleaning
-│   ├── analysis.py           # Script for lead conversion and drop-off analysis
-│   ├── visualization.py      # Script for generating graphical and tabular visualizations
-├── results/                  # Folder for output CSVs and visualizations
+│   ├── old salesforce_contact_report.csv
+│   ├── old salesforce_lead_report.csv
+│   ├── salesforce_account_report.csv
+│   ├── salesforce_combined_report.csv
+│   ├── salesforce_contact_report.csv
+│   ├── salesforce_joined_report.csv
+│   └── salesforce_lead_report.csv
+├── salesforceimportappend.py
+├── 02 salesforcejoin.py
+├── 03 salesforceconversionrate.py
 ├── README.md                 # Project documentation
+├── LICENSE                   # License
+
+```
 ---
+
+## Installation
+
+### Prerequisites
+- **Python 3.7+**
+- Required libraries:
+  - `pandas`
+  - `matplotlib`
+
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/salesforce-conversion-reporting.git
+   cd salesforce-conversion-reporting
+   ```
+2.	Install dependencies:
+    ```bash
+    pip install pandas matplotlib
+    ```
+3.	Place Salesforce Lead, Contact, and Account CSV files in the data/ directory.
+
+---
+
 
 ## salesforceimportappend.py
 Python Script to Import Salesforce Lead and Contact Reports into a combined report output.
@@ -76,26 +122,6 @@ Total_Leads | Converted | Total_Accounts | Accounts_Converted | Converted Rate (
 100.0       | 20.0      | 63.0           | 19.0               | 20.0               | 30.0
 200.0       | 52.0      | 121.0          | 45.0               | 26.0               | 37.19
 
-### Installation
-
-#### Prerequisites
-- **Python 3.7+**
-- Required libraries:
-  - `pandas`
-  - `matplotlib`
-
-#### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/salesforce-conversion-reporting.git
-   cd salesforce-conversion-reporting
-   ```
-2.	Install dependencies:
-    ```bash
-    pip install pandas matplotlib
-    ```
-3.	Place Salesforce Lead, Contact, and Account CSV files in the data/ directory.
-
 ---
 
 ## Custom Salesforce Automation
@@ -106,10 +132,14 @@ Need tailored Salesforce automation solutions? Contact me for custom scripts and
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is distributed under the same license as the original [get-henry/revops](https://github.com/get-henry/revops) repository. Refer to the [LICENSE](LICENSE) file for full details. If you forked this repository, please retain the license and reference to the original authors as required.
 
 ---
 
 ## Acknowledgments
 -	Pandas for data manipulation.
 -	Matplotlib for visualization.
+- **Original Repo**: [get-henry/revops](https://github.com/get-henry/revops)  
+- **Contributors**: We thank the authors of the original code for providing a great starting point.
+
+**Happy coding** and please feel free to open an issue or submit a pull request if you have improvements or questions!
