@@ -1,6 +1,17 @@
 # RevOps
-# Collection of Revenue Operations Stuff
+Collection of Revenue Operations Stuff
 
+---
+
+## Project Structure
+.
+├── data/                     # Folder for input CSV files (lead, contact, and account reports)
+├── scripts/                  # Python scripts for data processing and analysis
+│   ├── data_processing.py    # Script for data integration and cleaning
+│   ├── analysis.py           # Script for lead conversion and drop-off analysis
+│   ├── visualization.py      # Script for generating graphical and tabular visualizations
+├── results/                  # Folder for output CSVs and visualizations
+├── README.md                 # Project documentation
 ---
 
 ## salesforceimportappend.py
